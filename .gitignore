@@ -1,1 +1,5 @@
+.vscode
 .idea
+*__pycache__
+lesson3/library/library.db
+lesson3/enterprise/enterprise.db
