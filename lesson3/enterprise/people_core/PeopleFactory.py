@@ -1,4 +1,4 @@
-from DatabaseConnection import ClDatabaseConnection
+from database_connection import ClDatabaseConnection
 from people_core.People import ClPeople
 
 class ClPeopleFactory:
@@ -36,7 +36,7 @@ class ClPeopleFactory:
 
     def update_people_by_id(self, id, fname, lname, nickname, date_of_birth, phone):
         man = self.get_people_by_id(id)
-        self.db.execute_with_commit('UPDATE tbl_departments SET \
+        self.db.execute_with_commit('UPDATE tbl_people SET \
                                                 first_name = :fname, \
                                                 last_name = :lname, \
                                                 nickname = :nickname, \

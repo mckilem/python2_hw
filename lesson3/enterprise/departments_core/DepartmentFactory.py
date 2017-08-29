@@ -1,4 +1,4 @@
-from DatabaseConnection import ClDatabaseConnection
+from database_connection import ClDatabaseConnection
 from departments_core.Department import ClDepartment
 
 class ClDepartmentFactory:

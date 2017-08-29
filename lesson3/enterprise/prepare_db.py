@@ -1,4 +1,4 @@
-from DatabaseConnection import ClDatabaseConnection
+from database_connection import ClDatabaseConnection
 import os
 
 class ClPrepareDB:
@@ -14,7 +14,7 @@ class ClPrepareDB:
 
         sql = 'CREATE TABLE tbl_enterprise_info \
             ( \
-                idFiled INTEGER NOT NULL PRIMARY KEY, \
+                idField INTEGER NOT NULL PRIMARY KEY, \
                 field_name CHAR(255), \
                 value CHAR(255) \
             )'
@@ -44,29 +44,30 @@ class ClPrepareDB:
                 idField INTEGER NOT NULL PRIMARY KEY, \
                 id_people INTEGER NOT NULL, \
                 id_department INTEGER NOT NULL, \
+                salary FLOAT NULL, \
                 FOREIGN KEY (id_people) REFERENCES tbl_people(idField), \
                 FOREIGN KEY (id_department) REFERENCES tbl_departments(idField) \
             )'
         db.execute_with_commit(sql, ())
 
         # filling main information
-        db.execute_with_commit('INSERT INTO tbl_enterprise_info VALUES (1, "Title", "The Continental")', ())
-        db.execute_with_commit('INSERT INTO tbl_enterprise_info VALUES (2, "Owner", "Winston")', ())
-        db.execute_with_commit('INSERT INTO tbl_enterprise_info VALUES (3, "Concierge", "Charon")', ())
+        db.execute_with_commit('INSERT INTO tbl_enterprise_info VALUES (0, "Title", "The Continental")', ())
+        db.execute_with_commit('INSERT INTO tbl_enterprise_info VALUES (1, "Owner", "Winston")', ())
+        db.execute_with_commit('INSERT INTO tbl_enterprise_info VALUES (2, "Concierge", "Charon")', ())
 
         # filling people
-        db.execute_with_commit('INSERT INTO tbl_people VALUES (1, "John", "Wick", "Baba Yaga", 1964, "1-123-432-6748")', ())
-        db.execute_with_commit('INSERT INTO tbl_people VALUES (2, "Winston", "", "The Owner", 1943, "1-123-555-4356")', ())
-        db.execute_with_commit('INSERT INTO tbl_people VALUES (3, "Charon", "", "The Concierge", 1964, "1-123-555-4350")', ())
+        db.execute_with_commit('INSERT INTO tbl_people VALUES (0, "John", "Wick", "Baba Yaga", 1964, "1-123-432-6748")', ())
+        db.execute_with_commit('INSERT INTO tbl_people VALUES (1, "Winston", "", "The Owner", 1943, "1-123-555-4356")', ())
+        db.execute_with_commit('INSERT INTO tbl_people VALUES (2, "Charon", "", "The Concierge", 1964, "1-123-555-4350")', ())
 
         # filling departments
-        db.execute_with_commit('INSERT INTO tbl_departments VALUES (1, "The Continental", "New York City, USA")', ())
-        db.execute_with_commit('INSERT INTO tbl_departments VALUES (2, "The Continental", "Brno, Czech Republic")', ())
-        db.execute_with_commit('INSERT INTO tbl_departments VALUES (3, "The Continental", "Oslo, Norway")', ())
-        db.execute_with_commit('INSERT INTO tbl_departments VALUES (4, "The Continental", "Rome, Italy")', ())       
+        db.execute_with_commit('INSERT INTO tbl_departments VALUES (0, "The Continental", "New York City, USA")', ())
+        db.execute_with_commit('INSERT INTO tbl_departments VALUES (1, "The Continental", "Brno, Czech Republic")', ())
+        db.execute_with_commit('INSERT INTO tbl_departments VALUES (2, "The Continental", "Oslo, Norway")', ())
+        db.execute_with_commit('INSERT INTO tbl_departments VALUES (3, "The Continental", "Rome, Italy")', ())
 
         # filling staff
-        db.execute_with_commit('INSERT INTO tbl_employers VALUES (1, 1, 1)', ())
+        db.execute_with_commit('INSERT INTO tbl_employers VALUES (1, 1, 1, 50000)', ())
 
         print('db is redy for testing')
 
