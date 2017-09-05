@@ -1,4 +1,4 @@
-from database_connection import ClDatabaseConnection
+from lesson3.enterprise.database_connection import ClDatabaseConnection
 import os
 
 class ClPrepareDB:
@@ -52,23 +52,23 @@ class ClPrepareDB:
 
         # filling main information
         db.execute_with_commit('INSERT INTO tbl_enterprise_info VALUES (0, "Title", "The Continental")', ())
-        db.execute_with_commit('INSERT INTO tbl_enterprise_info VALUES (1, "Owner", "Winston")', ())
-        db.execute_with_commit('INSERT INTO tbl_enterprise_info VALUES (2, "Concierge", "Charon")', ())
+        #db.execute_with_commit('INSERT INTO tbl_enterprise_info VALUES (1, "Owner", "Winston")', ())
+        #db.execute_with_commit('INSERT INTO tbl_enterprise_info VALUES (2, "Concierge", "Charon")', ())
 
         # filling people
         db.execute_with_commit('INSERT INTO tbl_people VALUES (0, "John", "Wick", "Baba Yaga", 1964, "1-123-432-6748")', ())
-        db.execute_with_commit('INSERT INTO tbl_people VALUES (1, "Winston", "", "The Owner", 1943, "1-123-555-4356")', ())
-        db.execute_with_commit('INSERT INTO tbl_people VALUES (2, "Charon", "", "The Concierge", 1964, "1-123-555-4350")', ())
+        # db.execute_with_commit('INSERT INTO tbl_people VALUES (1, "Winston", "", "The Owner", 1943, "1-123-555-4356")', ())
+        # db.execute_with_commit('INSERT INTO tbl_people VALUES (2, "Charon", "", "The Concierge", 1964, "1-123-555-4350")', ())
 
         # filling departments
         db.execute_with_commit('INSERT INTO tbl_departments VALUES (0, "The Continental", "New York City, USA")', ())
-        db.execute_with_commit('INSERT INTO tbl_departments VALUES (1, "The Continental", "Brno, Czech Republic")', ())
-        db.execute_with_commit('INSERT INTO tbl_departments VALUES (2, "The Continental", "Oslo, Norway")', ())
-        db.execute_with_commit('INSERT INTO tbl_departments VALUES (3, "The Continental", "Rome, Italy")', ())
+        # db.execute_with_commit('INSERT INTO tbl_departments VALUES (1, "The Continental", "Brno, Czech Republic")', ())
+        # db.execute_with_commit('INSERT INTO tbl_departments VALUES (2, "The Continental", "Oslo, Norway")', ())
+        # db.execute_with_commit('INSERT INTO tbl_departments VALUES (3, "The Continental", "Rome, Italy")', ())
 
         # filling staff
-        db.execute_with_commit('INSERT INTO tbl_employers VALUES (1, 1, 1, 50000)', ())
+        db.execute_with_commit('INSERT INTO tbl_employers VALUES (0, 0, 0, 50000)', ())
 
-        print('db is redy for testing')
+        print('db is ready for testing')
 
         db.dispose()

@@ -1,15 +1,15 @@
-import prepare_db
-from departments_core.DepartmentFactory import ClDepartmentFactory
-from people_core.PeopleFactory import ClPeopleFactory
-from employers_core.EmployerFactory import ClEmployerFactory
-import enterprise
+from lesson3.enterprise.prepare_db import ClPrepareDB
+from lesson3.enterprise.departments_core.DepartmentFactory import ClDepartmentFactory
+from lesson3.enterprise.people_core.PeopleFactory import ClPeopleFactory
+from lesson3.enterprise.employers_core.EmployerFactory import ClEmployerFactory
+from lesson3.enterprise.enterprise import ClEnterprise
 
-prepare_db = prepare_db.ClPrepareDB()
+prepare_db = ClPrepareDB()
 prepare_db.prepare()
 
 db_name = 'enterprise.db'
 
-ent = enterprise.ClEnterprise(db_name)
+ent = ClEnterprise(db_name)
 print(ent)
 
 dep_factory = ClDepartmentFactory(db_name)
@@ -33,7 +33,7 @@ print(people_factory)
 employers_factory = ClEmployerFactory(db_name)
 man = employers_factory.add_employer(people_factory.get_people_by_id(0), dep_factory.get_department_by_id(0), 500000)
 print(employers_factory)
-employers_factory.update_employer_by_id(man.id, dep_factory.get_department_by_id(2), 1000000)
+employers_factory.update_employer_by_id(man.id, dep_factory.get_department_by_id(0), 1000000)
 print(employers_factory)
 employers_factory.delete_employer_by_id(man.id)
 print(employers_factory)

@@ -1,7 +1,7 @@
-from database_connection import ClDatabaseConnection
-from employers_core.Employer import ClEmployer
-from people_core.PeopleFactory import ClPeopleFactory
-from departments_core.DepartmentFactory import ClDepartmentFactory
+from lesson3.enterprise.database_connection import ClDatabaseConnection
+from lesson3.enterprise.employers_core.Employer import ClEmployer
+from lesson3.enterprise.people_core.PeopleFactory import ClPeopleFactory
+from lesson3.enterprise.departments_core.DepartmentFactory import ClDepartmentFactory
 
 class ClEmployerFactory:
 

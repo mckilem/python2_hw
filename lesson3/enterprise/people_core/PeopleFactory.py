@@ -1,5 +1,5 @@
-from database_connection import ClDatabaseConnection
-from people_core.People import ClPeople
+from lesson3.enterprise.database_connection import ClDatabaseConnection
+from lesson3.enterprise.people_core.People import ClPeople
 
 class ClPeopleFactory:
 

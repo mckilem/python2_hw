@@ -1,5 +1,5 @@
-from database_connection import ClDatabaseConnection
-from departments_core.Department import ClDepartment
+from lesson3.enterprise.database_connection import ClDatabaseConnection
+from lesson3.enterprise.departments_core.Department import ClDepartment
 
 class ClDepartmentFactory:
 
@@ -55,4 +55,4 @@ class ClDepartmentFactory:
         return None
     
     def __repr__(self):
-        return str(self.departments)
+        return str.join(self.departments)

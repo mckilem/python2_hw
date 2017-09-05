@@ -1,4 +1,4 @@
-from people_core.People import ClPeople
+from lesson3.enterprise.people_core.People import ClPeople
 
 
 class ClEmployer(ClPeople):
@@ -20,6 +20,9 @@ class ClEmployer(ClPeople):
 
     def get_id(self):
         return self.id
+
+    def get_salary(self):
+        return self.salary
 
 
     # end gets'n'sets section

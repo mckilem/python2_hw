@@ -1,4 +1,4 @@
-from database_connection import ClDatabaseConnection
+from lesson3.enterprise.database_connection import ClDatabaseConnection
 
 class ClEnterprise:
     def __init__(self, db_name):
@@ -15,4 +15,4 @@ class ClEnterprise:
             print(e)
 
     def __repr__(self):
-        return str(self.attributes)
+        return self.attributes
